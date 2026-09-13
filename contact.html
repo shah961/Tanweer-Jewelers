@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Private Appointments | Tanveer Jewellers Lahore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0B0C10;
+            --gold-primary: #D4AF37;
+            --text-pearl: #F5F5F0;
+            --text-muted: #A0A5B5;
+            --glass-bg: rgba(11, 12, 16, 0.85);
+            --glass-border: rgba(212, 175, 55, 0.25);
+            --font-heading: 'Cinzel', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-pearl);
+            font-family: var(--font-body);
+            padding-top: 80px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 6px;
+        }
+
+        .contact-card h2 {
+            font-family: var(--font-heading);
+            color: var(--gold-primary);
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .info-item i {
+            color: var(--gold-primary);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--glass-border);
+            color: var(--text-pearl);
+            border-radius: 4px;
+        }
+
+        button {
+            background: var(--gold-primary);
+            color: #000;
+            padding: 12px 25px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 250px;
+            border: 1px solid var(--glass-border);
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Details & Map -->
+        <div class="contact-card">
+            <h2>Visit Our Store</h2>
+            <div class="info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                    <strong>Address:</strong><br>
+                    11 Haider Road, Islampura, Lahore, Punjab, Pakistan
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                    <strong>Phone Numbers:</strong><br>
+                    +92 321 4567890<br>
+                    +92 42 37123456
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-clock"></i>
+                <div>
+                    <strong>Store Hours:</strong><br>
+                    Monday – Saturday: 11:00 AM – 9:00 PM<br>
+                    <span style="color:#ff6b6b">Sunday: Closed</span>
+                </div>
+            </div>
+
+            <!-- Embedded Google Map -->
+            <iframe class="map-frame" src="https://maps.google.com/maps?q=11%20Haider%20Road,%20Islampura,%20Lahore&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+        </div>
+
+        <!-- Consultation Appointment Form -->
+        <div class="contact-card">
+            <h2>Book Bridal Consultation</h2>
+            <form onsubmit="event.preventDefault(); alert('Appointment request received! Our team will confirm via phone/WhatsApp.');">
+                <input type="text" placeholder="Full Name" required>
+                <input type="tel" placeholder="Phone / WhatsApp Number" required>
+                <input type="date" required>
+                <textarea rows="4" placeholder="Tell us about your requirements (e.g. 22K Bridal Set, Gold Kara, Coin purchase)"></textarea>
+                <button type="submit">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
