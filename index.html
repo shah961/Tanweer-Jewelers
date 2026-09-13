@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanveer Jewellers | Luxury Gold & Fine Jewelry Lahore, Pakistan</title>
+    <meta name="description" content="Tanveer Jewellers - Premier gold and fine jewelry store in Islampura, Lahore. Bespoke 24K & 22K bridal sets, Kundan, Polki, and certified gold coins.">
+    <meta name="keywords" content="Tanveer Jewellers, Gold rates Lahore, Bridal Jewelry Lahore, 24K Gold Pakistan, Islampura Jewellers">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Tanveer Jewellers | Crafting Timeless Elegance Since 1985">
+    <meta property="og:description" content="Discover bespoke luxury gold jewelry, bridal sets, and real-time gold rates in Lahore, Pakistan.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tanveerjewellers.com">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1200">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Vector Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS Styling -->
+    <style>
+        :root {
+            --bg-dark: #0B0C10;
+            --bg-overlay: #021B1A;
+            --gold-primary: #D4AF37;
+            --gold-light: #FFD700;
+            --gold-dark: #AA7C11;
+            --text-pearl: #F5F5F0;
+            --text-muted: #A0A5B5;
+            --glass-bg: rgba(11, 12, 16, 0.75);
+            --glass-border: rgba(212, 175, 55, 0.25);
+            --font-heading: 'Cinzel', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-pearl);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Gold Rate Ticker Bar */
+        .ticker-wrap {
+            width: 100%;
+            background: linear-gradient(90deg, #021B1A, #121820, #021B1A);
+            border-bottom: 1px solid var(--glass-border);
+            overflow: hidden;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .ticker-move {
+            display: flex;
+            white-space: nowrap;
+            animation: ticker 30s linear infinite;
+        }
+
+        .ticker-item {
+            display: inline-block;
+            padding: 0 30px;
+            font-size: 0.85rem;
+            color: var(--gold-light);
+            letter-spacing: 0.5px;
+        }
+
+        .ticker-item span {
+            color: var(--text-pearl);
+            font-weight: 600;
+            margin-left: 5px;
+        }
+
+        @keyframes ticker {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        /* Main Navigation */
+        header {
+            position: fixed;
+            top: 38px;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .brand-logo {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .brand-logo span {
+            color: var(--text-pearl);
+            font-size: 0.9rem;
+            display: block;
+            letter-spacing: 4px;
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-pearl);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--gold-light);
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: #000;
+            padding: 10px 22px;
+            border-radius: 2px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        #canvas-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 0.95rem;
+            letter-spacing: 5px;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 3.8rem;
+            line-height: 1.15;
+            color: var(--text-pearl);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, #FFF, var(--gold-light), var(--gold-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-primary);
+            padding: 10px 22px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold-light);
+        }
+
+        /* 3D Ornament Container */
+        .showcase-3d {
+            padding: 100px 0;
+            background: radial-gradient(circle at center, var(--bg-overlay) 0%, var(--bg-dark) 70%);
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            color: var(--gold-primary);
+            margin-bottom: 10px;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+
+        #ring-container {
+            width: 100%;
+            height: 450px;
+            position: relative;
+        }
+
+        /* Live Gold Price Calculator */
+        .calculator-section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .calc-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 40px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .input-group label {
+            font-size: 0.85rem;
+            color: var(--gold-primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .input-group input, .input-group select {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--glass-border);
+            padding: 12px;
+            color: var(--text-pearl);
+            border-radius: 4px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .calc-result {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px dashed var(--gold-primary);
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .calc-result h3 {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .calc-result .total-price {
+            font-size: 2.2rem;
+            font-family: var(--font-heading);
+            color: var(--gold-light);
+            margin-top: 5px;
+        }
+
+        /* Fixed WhatsApp Floating CTA */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: #050608;
+            border-top: 1px solid var(--glass-border);
+            padding: 60px 20px 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-heading);
+            color: var(--gold-primary);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.4rem; }
+            .nav-links { display: none; }
+            .calc-card { padding: 20px; }
+        }
+    </style>
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "JewelryStore",
+      "name": "Tanveer Jewellers",
+      "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338",
+      "@id": "https://tanveerjewellers.com",
+      "url": "https://tanveerjewellers.com",
+      "telephone": "+923214567890",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "11 Haider Road, Islampura",
+        "addressLocality": "Lahore",
+        "addressRegion": "Punjab",
+        "postalCode": "54000",
+        "addressCountry": "PK"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "11:00",
+        "closes": "21:00"
+      },
+      "priceRange": "$$$$"
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Live Gold Ticker -->
+    <div class="ticker-wrap">
+        <div class="ticker-move">
+            <div class="ticker-item">24K GOLD RATE (PER TOLA): <span>PKR 285,500</span></div>
+            <div class="ticker-item">22K GOLD RATE (PER TOLA): <span>PKR 261,700</span></div>
+            <div class="ticker-item">24K GOLD RATE (PER GRAM): <span>PKR 24,476</span></div>
+            <div class="ticker-item">SILVER RATE (PER TOLA): <span>PKR 3,250</span></div>
+            <!-- Repeat for seamless marquee -->
+            <div class="ticker-item">24K GOLD RATE (PER TOLA): <span>PKR 285,500</span></div>
+            <div class="ticker-item">22K GOLD RATE (PER TOLA): <span>PKR 261,700</span></div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">
+                Tanveer Jewellers
+                <span>EST. 1985 • LAHORE</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="products.html">Collections</a></li>
+                <li><a href="about.html">Our Legacy</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <a href="https://wa.me/923214567890?text=Hello%20Tanveer%20Jewellers,%20I%20would%20like%20to%20book%20a%20private%20consultation." class="cta-btn" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Book Appointment
+            </a>
+        </div>
+    </header>
+
+    <!-- Floating WhatsApp CTA -->
+    <a href="https://wa.me/923214567890" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <canvas id="canvas-bg"></canvas>
+        <div class="hero-content">
+            <p class="hero-subtitle">Bespoke Gold & Fine Jewelry</p>
+            <h1 class="hero-title">Crafting <span>Timeless Elegance</span> Since 1985</h1>
+            <p class="hero-desc">Experience master artisan craftsmanship in 24K and 22K certified pure gold, traditional Kundan sets, and contemporary bridal collections in Lahore.</p>
+            <div class="hero-actions">
+                <a href="products.html" class="cta-btn">Explore Collections</a>
+                <a href="#calculator" class="btn-secondary">Calculate Gold Rate</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive 3D Ornament Showcase -->
+    <section class="showcase-3d">
+        <h2 class="section-title">The Royal Solitaire Showcase</h2>
+        <p class="section-desc">Interactive 360° view of our signature 22K Gold Crown Ring with brilliant-cut stones.</p>
+        <div id="ring-container"></div>
+    </section>
+
+    <!-- Live Gold Price Calculator Section -->
+    <section class="calculator-section" id="calculator">
+        <div class="calc-card">
+            <h2 class="section-title" style="text-align: center;">Live Gold Estimator</h2>
+            <p style="text-align: center; color: var(--text-muted);">Calculate real-time estimates based on current Lahore Sarafa Market benchmark rates.</p>
+            
+            <div class="calc-grid">
+                <div class="input-group">
+                    <label for="karat">Select Karat</label>
+                    <select id="karat" onchange="calculateGoldPrice()">
+                        <option value="285500">24K Pure Gold</option>
+                        <option value="261700" selected>22K Jewelry Gold</option>
+                        <option value="214125">18K Decorative Gold</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="unit">Weight Unit</label>
+                    <select id="unit" onchange="calculateGoldPrice()">
+                        <option value="tola">Tola (1 Tola = 11.66g)</option>
+                        <option value="gram">Grams (g)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="weight">Weight Quantity</label>
+                    <input type="number" id="weight" value="1" min="0.1" step="0.1" oninput="calculateGoldPrice()">
+                </div>
+                <div class="input-group">
+                    <label for="making">Estimated Making Charge (%)</label>
+                    <input type="number" id="making" value="5" min="0" max="25" oninput="calculateGoldPrice()">
+                </div>
+            </div>
+
+            <div class="calc-result">
+                <h3>Estimated Total Value</h3>
+                <div class="total-price" id="total-price">PKR 274,785</div>
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 5px;">*Includes approximate making charges. Final store rate may vary slightly upon physical weighing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Tanveer Jewellers</h4>
+                <p>Lahore's trusted luxury goldsmiths. Delivering purity, hallmarking, and timeless hand-carved heritage for nearly four decades.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home Page</a></li>
+                    <li><a href="products.html">Jewelry Catalog</a></li>
+                    <li><a href="about.html">Our Craftsmanship</a></li>
+                    <li><a href="contact.html">Store Location</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Store Location</h4>
+                <p><i class="fa-solid fa-location-dot" style="color:var(--gold-primary);"></i> 11 Haider Road, Islampura, Lahore, Punjab, Pakistan</p>
+                <p><i class="fa-solid fa-phone" style="color:var(--gold-primary); margin-top:8px;"></i> +92 321 4567890</p>
+                <p><i class="fa-solid fa-envelope" style="color:var(--gold-primary); margin-top:8px;"></i> info@tanveerjewellers.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Hours of Operation</h4>
+                <p>Monday – Saturday:<br>11:00 AM – 9:00 PM</p>
+                <p style="color: #ff6b6b; margin-top: 5px;">Sunday: Closed</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Tanveer Jewellers Lahore. All Rights Reserved. Designed for Luxury & Precision.
+        </div>
+    </footer>
+
+    <!-- JS CDN Scripts: Three.js & GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <script>
+        // Particle Background Canvas Effect
+        const canvas = document.getElementById('canvas-bg');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedY = Math.random() * -0.5 - 0.2;
+                this.opacity = Math.random() * 0.7 + 0.3;
+            }
+            update() {
+                this.y += this.speedY;
+                if (this.y < 0) this.reset();
+            }
+            draw() {
+                ctx.fillStyle = `rgba(212, 175, 55, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 70; i++) particles.push(new Particle());
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // Three.js Interactive 3D Gold Ring Render
+        const container = document.getElementById('ring-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        container.appendChild(renderer.domElement);
+
+        // Gold Material Torus Ring
+        const geometry = new THREE.TorusGeometry(2, 0.4, 32, 100);
+        const material = new THREE.MeshStandardMaterial({
+            color: 0xD4AF37,
+            metalness: 0.9,
+            roughness: 0.2
+        });
+        const ring = new THREE.Mesh(geometry, material);
+        scene.add(ring);
+
+        // Lighting Setup
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+        scene.add(ambientLight);
+        const pointLight = new THREE.PointLight(0xffd700, 2, 100);
+        pointLight.position.set(10, 10, 10);
+        scene.add(pointLight);
+
+        camera.position.z = 6;
+
+        function animateRing() {
+            requestAnimationFrame(animateRing);
+            ring.rotation.x += 0.005;
+            ring.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+        animateRing();
+
+        // Live Gold Rate Calculator JS
+        function calculateGoldPrice() {
+            const karatRate = parseFloat(document.getElementById('karat').value);
+            const unit = document.getElementById('unit').value;
+            const weight = parseFloat(document.getElementById('weight').value) || 0;
+            const making = parseFloat(document.getElementById('making').value) || 0;
+
+            let pricePerGram = unit === 'tola' ? (karatRate / 11.66) : (karatRate / 11.66);
+            let rawPrice = unit === 'tola' ? (karatRate * weight) : (pricePerGram * weight);
+            let totalPrice = rawPrice + (rawPrice * (making / 100));
+
+            document.getElementById('total-price').innerText = "PKR " + Math.round(totalPrice).toLocaleString('en-PK');
+        }
+
+        // GSAP Hero Entrance Animations
+        gsap.from(".hero-subtitle", { opacity: 0, y: 20, duration: 1, delay: 0.2 });
+        gsap.from(".hero-title", { opacity: 0, y: 30, duration: 1.2, delay: 0.4 });
+        gsap.from(".hero-desc", { opacity: 0, y: 20, duration: 1, delay: 0.6 });
+        gsap.from(".hero-actions", { opacity: 0, scale: 0.9, duration: 0.8, delay: 0.8 });
+    </script>
+</body>
+</html>
